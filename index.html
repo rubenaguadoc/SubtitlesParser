@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			function MixIn(Btn) {
+				if(Btn.checked){
+					document.getElementById("Form").action = "mixsub.php";
+				}else{
+					document.getElementById("Form").action = "generateword.php";
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<center>
+		</br>
+		</br>
+		<form action="generateword.php" method="POST" enctype="multipart/form-data" id="Form">
+			<label for="#Es">Subtítulos en español: </label><input type="file" name="EsFile" accept=".srt,.txt" id="Es"></br></br>
+			<label for="#En">Subtítulos en inglés: </label><input type="file" name="EnFile" accept=".srt,.txt" id="En"></br></br>
+			<input type="checkbox" name="Mix" id="Mix" onclick="MixIn(this)"><label for="#Mix"> Mezclar subtitulos</label></br></br>
+			<input type="submit"></br></br>
+		</form>
+	</body>
+</html>
